@@ -13,7 +13,7 @@ namespace sample_app.Controllers
         [HttpGet("[action]")]
         public Host Host()
         {
-            var name = $"{Environment.GetEnvironmentVariable("COMPUTERNAME") ?? Environment.GetEnvironmentVariable("HOSTNAME") ?? Dns.GetHostName()}";
+            var name = $"{System.Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME") ?? Dns.GetHostName()}";
 
             return new Host{ HostName = name};
         }
